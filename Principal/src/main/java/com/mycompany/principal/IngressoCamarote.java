@@ -10,6 +10,17 @@ package com.mycompany.principal;
  */
 public class IngressoCamarote extends Ingresso {
     
+   //Construtor da classe
+    public IngressoCamarote(String nomeEvento, String data, float valorUnico, int capacidadeMaxima, String nomePessoa, String cpf)
+    {
+        this.setNomeEvento(nomeEvento);
+        this.setDataEvento(data);
+        this.setValorUnico(valorUnico);
+        this.setCapacidadeMaxima(capacidadeMaxima);
+        this.setNomePessoa(nomePessoa);
+        this.setCpf(cpf);
+    }
+
     @Override
     public void calcularValor()
     {

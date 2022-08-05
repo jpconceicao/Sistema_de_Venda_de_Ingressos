@@ -16,22 +16,22 @@ public class Evento {
     private int capacidadeMaxima;
     private ArrayList<String> ingressos = new ArrayList<String>();
 
-    public void setNome(String nome)
+    public void setNomeEvento(String nome)
     {
         this.nome = nome;
     }
 
-    public String getNome()
+    public String getNomeEvento()
     {
         return this.nome;
     }
 
-    public void setData(String data)
+    public void setDataEvento(String data)
     {
         this.data = data;
     }
 
-    public String getData()
+    public String getDataEvento()
     {
         return this.data;
     }
@@ -73,7 +73,7 @@ public class Evento {
         */
     }
     
-    public void imprimirInformacoes()
+    public void imprimirInformacoesEvento()
     {
         System.out.println("Nome do evento: " + this.nome);
         System.out.println("Data do evento: " + this.data);

@@ -12,10 +12,37 @@ public class Ingresso extends Evento {
     
     protected float valor;
     
-    public void calcularValor(){};
+    protected String nomePessoa;
+    protected String cpf;
     
+    public void calcularValor(){};
+
+    public void setNomePessoa(String nomePessoa)
+    {
+        this.nomePessoa = nomePessoa;
+    }
+
+    public String getNomePessoa()
+    {
+        return this.nomePessoa;
+    }
+    
+    public void setCpf(String cpf)
+    {
+        this.cpf = cpf;
+    }
+
+    public String getCpf()
+    {
+        return this.cpf;
+    }
+    
+    //Apresenta resumo do ingresso
     public void mostrarResumo()
     {
-        System.out.println("teste");
+        System.out.println("Nome do Evento: " + this.getNomeEvento());
+        System.out.println("Data do Evento: " + this.getDataEvento());
+        System.out.println("Nome da Pessoa: " + this.nomePessoa);
+        System.out.println("CPF da Pessoa: " + this.cpf);
     }
 }

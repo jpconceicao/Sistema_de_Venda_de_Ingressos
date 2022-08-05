@@ -4,6 +4,7 @@
  */
 
 package com.mycompany.principal;
+import java.util.ArrayList; // import the ArrayList class
 
 /**
  *
@@ -16,20 +17,42 @@ public class Principal {
 
     public static void main(String[] args) 
     {
-        IngressoCamarote ingresso = new IngressoCamarote();
+        // Criando primeiro ingresso
+        IngressoCamarote ingresso1 = new IngressoCamarote("Show de Seu Jorge", "12/08/2022", 100.00f, 1000, "Jorge da Silva", "98745632112");
+        ingresso1.calcularValor();
         
-        ingresso.setNome("Show de reggae");
-        ingresso.setData("12/08/2022");
-        ingresso.setValorUnico(100.00f);
-        ingresso.setCapacidadeMaxima(1000);
+        ingresso1.imprimirValor();
+        ingresso1.mostrarResumo();
+
+        System.out.println("\n\n");
+
+        // Criando segundo ingresso
         
-        ingresso.calcularValor();
-        ingresso.imprimirValor();
+        IngressoVip ingresso2 = new IngressoVip("Show de Seu Jorge", "12/08/2022", 100.00f, 1000, "João dos Santos", "45879632115");
+        ingresso2.calcularValor();
         
+        ingresso2.imprimirValor();
+        ingresso2.mostrarResumo();
+
         System.out.println("\n\n");
         
-        ingresso.imprimirInformacoes();
+        // Criando terceiro ingresso
         
+        IngressoPista ingresso3 = new IngressoPista("Show de Seu Jorge", "12/08/2022", 100.00f, 1000, "Marina Silva", "88877799952");
+        ingresso3.calcularValor();
+        
+        ingresso3.imprimirValor();
+        ingresso3.mostrarResumo();
+        
+        System.out.println("\n\n");
+      
+        
+        ArrayList<Ingresso> ingressos = new ArrayList<Ingresso>();
+        ingressos.add(ingresso1);
+        ingressos.add(ingresso2);
+        ingressos.add(ingresso3);
+        
+        System.out.println(ingressos);
         
     }
 }
