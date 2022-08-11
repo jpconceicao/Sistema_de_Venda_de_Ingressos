@@ -11,20 +11,30 @@ import java.util.ArrayList;
  */
 
 public class Evento {
-    private String nome;
+    private String nomeEvento;
     private String data;
     private float valorUnico;
     private int capacidadeMaxima;
-    private ArrayList<String> ingressos = new ArrayList<String>();
-
+    private ArrayList<Ingresso> ingressos = new ArrayList<Ingresso>();
+    
+    public Evento(){}
+    
+    public Evento(String nome, String data, float valor, int capacidade)
+    {
+        this.nomeEvento = nome;
+        this.data = data;
+        this.valorUnico = valor;
+        this.capacidadeMaxima = capacidade;
+    }
+    
     public void setNomeEvento(String nome)
     {
-        this.nome = nome;
+        this.nomeEvento = nome;
     }
 
     public String getNomeEvento()
     {
-        return this.nome;
+        return this.nomeEvento;
     }
 
     public void setDataEvento(String data)
@@ -52,33 +62,36 @@ public class Evento {
         this.capacidadeMaxima = capacidadeMaxima;
     }
 
-    public float getCapacidadeMaxima()
+    public int getCapacidadeMaxima()
     {
         return this.capacidadeMaxima;
     }
 
-    public void venderIngresso(String ingresso) //O objeto passado será um objeto da class ingresso.
+    public void venderIngresso(Ingresso ingresso) //O objeto passado será um objeto da class ingresso.
     {
-        System.out.println("Metodo vender ingresso!");
-        ingressos.add(ingresso);
+        if(ingressos.size() < this.capacidadeMaxima)
+        {
+            ingressos.add(ingresso);
+        }
+        else
+        {
+            System.out.println("Quantidade de ingressos vendidos chegou ao limite!");
+        }
+        
     }
 
     public void mostrarIngressosVendidos()
     {
-        System.out.println("Mostrar ingressos vendidos!");
-        /*
-        for (int i = 0; i < String.length(); i++)
-        {
-            System.out.println(ingressos[1]);
-        }
-        */
+        System.out.println("Quantidade de ingressos vendidos para o " + this.nomeEvento + " é: " + ingressos.size());
+        
     }
     
     public void imprimirInformacoesEvento()
     {
-        System.out.println("Nome do evento: " + this.nome);
+        System.out.println("Nome do evento: " + this.nomeEvento);
         System.out.println("Data do evento: " + this.data);
         System.out.println("Valor único: " + this.valorUnico);
         System.out.println("Capacidade máxima de pessoas: " + this.capacidadeMaxima);
     }
+    
 }

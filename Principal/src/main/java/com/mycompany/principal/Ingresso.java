@@ -11,11 +11,12 @@ package com.mycompany.principal;
 public class Ingresso extends Evento {
     
     protected float valor;
-    
     protected String nomePessoa;
     protected String cpf;
     
-    public void calcularValor(){};
+   
+    
+    public void calcularValor(){}; //Será sobreescrito nas demais classes
 
     public void setNomePessoa(String nomePessoa)
     {

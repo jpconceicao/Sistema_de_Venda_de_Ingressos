@@ -10,15 +10,19 @@ package com.mycompany.principal;
  */
 public class IngressoPista extends Ingresso {
     
+    protected String tipo = "Pista";
     //Construtor da classe
-    public IngressoPista(String nomeEvento, String data, float valorUnico, int capacidadeMaxima, String nomePessoa, String cpf)
+    public IngressoPista(String nomePessoa, String cpf, Evento eventoRelacionado)
     {
-        this.setNomeEvento(nomeEvento);
-        this.setDataEvento(data);
-        this.setValorUnico(valorUnico);
-        this.setCapacidadeMaxima(capacidadeMaxima);
+        Evento evento = eventoRelacionado;
+        this.setNomeEvento(evento.getNomeEvento());
+        this.setDataEvento(evento.getDataEvento());
+        this.setValorUnico(evento.getValorUnico());
+        this.setCapacidadeMaxima(evento.getCapacidadeMaxima());
         this.setNomePessoa(nomePessoa);
         this.setCpf(cpf);
+        
+        calcularValor();
     }
 
     @Override
@@ -30,7 +34,7 @@ public class IngressoPista extends Ingresso {
     
     public void imprimirValor()
     {
-        System.out.println("Tipo do Ingresso: PISTA");
+        System.out.println("Tipo do Ingresso: " + this.tipo);
         System.out.println("O valor do ingresso é: " + this.valor);
     }
 }
